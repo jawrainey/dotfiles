@@ -11,8 +11,8 @@ set mouse=a
 set shortmess=I
 set showmatch
 set pastetoggle=<F2>
-set t_Co=256
-colorscheme mustang
+set background=dark
+colorscheme solarized
 filetype plugin indent on
 set guitablabel=\[%N\]\ %t\ %M "tabs
 
@@ -90,4 +90,7 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete 
+autocmd FileType java set omnifunc=javacomplete#Complete
+
+"Supertab awesomeness"
+let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
