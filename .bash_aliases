@@ -33,12 +33,6 @@ alias jawrainey=' ssh jay@jawrainey.me'
 alias lapis='ssh C1122445@lapis.cs.cf.ac.uk'
 alias csps='ssh C1122445@projectsite.cs.cf.ac.uk'
 
-#Package Management 
-alias update='sudo apt-get update && sudo apt-get upgrade'
-alias distupdate='sudo apt-get upgrade && dist-upgrade'
-alias install='sudo apt-get install' 
-alias remove='sudo apt-get remove'  
-
 #Git Commands
 alias gpo='git push origin'
 alias gp='git pull'
