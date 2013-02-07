@@ -7,7 +7,7 @@ alias lsd='ls -Gal | grep ^d'
 alias lf='ls -Gl | grep ^d'
 
 #Convenience
-alias bmod='vim ~/.profile'
+alias bmod='vim ~/.bash_profile'
 alias bal='vim ~/.bash_aliases'
 alias vmod='vim ~/.vimrc'
 alias vi='vim'
@@ -18,6 +18,7 @@ alias ..='cd ..'
 
 #Moving around
 alias me='cd ~/;ls'
+alias htdocs='cd ~/Applications/MAMP/htdocs;ls'
 alias doc='cd ~/Documents/;ls'
 alias cs='cd ~/Dropbox/uni/year-two/;ls'
 alias code='cd ~/Dropbox/code/;ls'
@@ -29,9 +30,9 @@ alias dbox='cd ~/Dropbox/;ls'
 alias most='du -hsx * | sort -nr | head -5'
 
 #ssh connections
-alias jawrainey=' ssh jay@jawrainey.me'
+alias jawrainey=' ssh jaqera@jawrainey.me'
 alias lapis='ssh C1122445@lapis.cs.cf.ac.uk'
-alias csps='ssh C1122445@projectsite.cs.cf.ac.uk'
+alias csps='ssh C1122445@websites.cs.cf.ac.uk'
 
 #Git Commands
 alias gpo='git push origin'
