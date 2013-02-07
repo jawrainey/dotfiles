@@ -18,7 +18,7 @@ alias ..='cd ..'
 
 #Moving around
 alias me='cd ~/;ls'
-alias htdocs='cd ~/Applications/MAMP/htdocs;ls'
+alias htdocs='cd /Applications/MAMP/htdocs;ls'
 alias doc='cd ~/Documents/;ls'
 alias cs='cd ~/Dropbox/uni/year-two/;ls'
 alias code='cd ~/Dropbox/code/;ls'
