@@ -1,8 +1,8 @@
 #Magically grep and ls aliases 
-alias grep="grep --color=always"
-alias ls='ls -G'
-alias ll="ls -lh"
-alias la="ls -alh"
+alias grep="grep --color=auto"
+alias ls='ls -G --color=auto'
+alias ll="ls -lh --color=auto"
+alias la="ls -alh --color=auto"
 alias lsd='ls -Gal | grep ^d'
 alias lf='ls -Gl | grep ^d'
 
@@ -15,6 +15,8 @@ alias v='vim'
 alias c='clear'
 alias cl="clear;ls"
 alias ..='cd ..'
+alias open="nautilus"
+alias py="python"
 
 #Moving around
 alias me='cd ~/;ls'

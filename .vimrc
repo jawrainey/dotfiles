@@ -12,6 +12,8 @@ set shortmess=I
 set showmatch
 set pastetoggle=<F2>
 set background=dark
+"solarized options 
+set t_Co=16
 colorscheme solarized
 filetype plugin indent on
 set guitablabel=\[%N\]\ %t\ %M "tabs

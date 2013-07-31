@@ -2,7 +2,7 @@
 [ -z "$PS1" ] && return
 
 #enable magical colours of utils
-export CLICOLOR=1
+force_color_prompt=yes
 
 # history settings
 HISTCONTROL=ignoreboth
@@ -12,6 +12,11 @@ shopt -s checkwinsize
 HISTSIZE=10000
 HISTFILESIZE=20000
 HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
+
+# Include bash git prompt
+#if [ -f ~/.bash/gitprompt.sh ] ; then
+#    source ~/.bash/gitprompt.sh
+#fi
 
 # Include aliases
 if [ -f ~/.bash_aliases ] ; then
@@ -37,4 +42,11 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+# let there be color!
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
 fi

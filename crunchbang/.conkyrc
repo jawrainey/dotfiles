@@ -34,6 +34,8 @@ Hostname: $alignr$nodename
 Kernel: $alignr$kernel
 Uptime: $alignr$uptime
 
+CPU Usage ${hr 1}{$color}
+
 CPU1: ${alignr}${cpu cpu1}%
 ${cpubar 4 cpu1}
 CPU2: ${alignr}${cpu cpu2}%
@@ -42,6 +44,10 @@ CPU3: ${alignr}${cpu cpu3}%
 ${cpubar 4 cpu3}
 CPU4: ${alignr}${cpu cpu4}%
 ${cpubar 4 cpu4}
+
+Temps ${hr 1}${color}
+
+${execi 300 sensors | grep Core}
 
 Ram: ${alignr}$mem / $memmax ($memperc%)
 ${membar 4}
@@ -62,11 +68,10 @@ Filesystem ${hr 1}${color}
 
 Root: ${alignr}${fs_free /} / ${fs_size /}
 ${fs_bar 4 /}
-Home: ${alignr}${fs_free /home} / ${fs_size /home}
-${fs_bar 4 /home}
 
 Date/Time ${hr 1}${color}
 
 United Kingdom: ${alignr}${time %H:%M}
 Sri Lanka: $alignr ${tztime Asia/Colombo %H:%M}
 Date: $alignr ${color 808080}${time %A} ${color CDB5CD}${time %d} ${color 808080}${time %B}
+
