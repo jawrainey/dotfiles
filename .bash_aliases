@@ -15,7 +15,7 @@ alias v='vim'
 alias c='clear'
 alias cl="clear;ls"
 alias ..='cd ..'
-alias open="nautilus"
+alias opn="nautilus"
 alias py="python"
 
 #Moving around
