@@ -13,11 +13,6 @@ HISTSIZE=10000
 HISTFILESIZE=20000
 HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 
-# Include bash git prompt
-#if [ -f ~/.bash/gitprompt.sh ] ; then
-#    source ~/.bash/gitprompt.sh
-#fi
-
 # Include aliases
 if [ -f ~/.bash_aliases ] ; then
     source ~/.bash_aliases
@@ -49,4 +44,9 @@ if [ -e /usr/share/terminfo/x/xterm-256color ]; then
         export TERM='xterm-256color'
 else
         export TERM='xterm-color'
+fi
+
+# Git auto-completion
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
 fi
