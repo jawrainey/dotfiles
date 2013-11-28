@@ -1,8 +1,6 @@
 "Basic settings"
 set nocompatible
 syntax on
-call pathogen#infect()
-call pathogen#helptags()
 set backspace=indent,eol,start
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set virtualedit=onemore
@@ -10,9 +8,10 @@ set number
 set mouse=a
 set shortmess=I
 set showmatch
-set pastetoggle=<F2>
+set autoread
+
+"solarized options
 set background=dark
-"solarized options 
 set t_Co=16
 colorscheme solarized
 filetype plugin indent on
@@ -27,9 +26,9 @@ set smartcase
 
 "Indentation settings"
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set autoindent
 set copyindent
 set smartindent
@@ -57,11 +56,6 @@ au GUIEnter * set visualbell t_vb=
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
-"Convenience mappings"
-nnoremap ; :
-inoremap <Nul> <C-x><C-o>
-au FileType python map <F5> :!clear && python %<CR>
-
 "Use the damn hjkl keys"
 noremap <up> <nop>
 noremap <down> <nop>
@@ -74,25 +68,19 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-"LaTeX Settings"
-let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_UseMakefile=0
-
 "NERDTree settings"
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$', '\.class$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
 
-"Autocomplete"
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-"Supertab awesomeness"
-let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"My bundles"
+Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+"Vim script repos"
+Bundle 'ctrlp'
+set runtimepath^=~/.vim/bundle/ctrlp.vim
