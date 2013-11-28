@@ -16,6 +16,7 @@ set t_Co=16
 colorscheme solarized
 filetype plugin indent on
 set guitablabel=\[%N\]\ %t\ %M "tabs
+set guifont=Inconsolata:h13
 
 "Search settings"
 set hlsearch
