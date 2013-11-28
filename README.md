@@ -1,1 +1,1 @@
->My configuration files for vim, bash, tint2, and conky.
+>My configuration files for vim, and bash.
