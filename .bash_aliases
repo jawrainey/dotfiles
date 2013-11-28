@@ -3,38 +3,23 @@ alias grep="grep --color=auto"
 alias ls='ls -G --color=auto'
 alias ll="ls -lh --color=auto"
 alias la="ls -alh --color=auto"
-alias lsd='ls -Gal | grep ^d'
-alias lf='ls -Gl | grep ^d'
 
 #Convenience
-alias bmod='vim ~/.bash_profile'
-alias bal='vim ~/.bash_aliases'
-alias vmod='vim ~/.vimrc'
 alias vi='vim'
 alias v='vim'
 alias c='clear'
 alias cl="clear;ls"
 alias ..='cd ..'
+alias b='cd -'
 alias opn="nautilus"
 alias py="python"
 
 #Moving around
-alias me='cd ~/;ls'
-alias htdocs='cd /Applications/MAMP/htdocs;ls'
-alias doc='cd ~/Documents/;ls'
-alias cs='cd ~/Dropbox/uni/year-two/;ls'
+alias htdocs='cd ~/Dropbox/web/;ls'
+alias uni='cd ~/Dropbox/uni/;ls'
 alias code='cd ~/Dropbox/code/;ls'
 alias euler='cd ~/Dropbox/code/euler;ls'
-alias coursera='cd ~/Dropbox/coursera/;ls'
 alias dbox='cd ~/Dropbox/;ls'
-
-#Gives you what is using the most space. Both directories and files.
-alias most='du -hsx * | sort -nr | head -5'
-
-#ssh connections
-alias jawrainey=' ssh jaqera@jawrainey.me'
-alias lapis='ssh C1122445@lapis.cs.cf.ac.uk'
-alias csps='ssh C1122445@websites.cs.cf.ac.uk'
 
 #Git Commands
 alias gpo='git push origin'
