@@ -1,3 +1,20 @@
+"Setup Vundle - it's awesome!"
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"General enhancements"
+Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'kien/ctrlp.vim.git'
+
+"Colorschemes"
+Bundle 'altercation/vim-colors-solarized.git'
+
+"Bundle settings"
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 "Basic settings"
 set nocompatible
 syntax on
@@ -73,15 +90,3 @@ map <C-l> <C-w>l
 let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$', '\.class$']
 let NERDTreeMinimalUI=1
 let NERDTreeDirArrows=1
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-"My bundles"
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-"Vim script repos"
-Bundle 'ctrlp'
-set runtimepath^=~/.vim/bundle/ctrlp.vim
