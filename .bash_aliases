@@ -1,8 +1,6 @@
 #Magically grep and ls aliases 
-alias grep="grep --color=auto"
-alias ls='ls -G --color=auto'
-alias ll="ls -lh --color=auto"
-alias la="ls -alh --color=auto"
+alias ll="ls -lh"
+alias la="ls -alh"
 
 #Convenience
 alias vi='vim'

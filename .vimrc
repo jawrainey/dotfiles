@@ -30,7 +30,7 @@ set autoread
 "solarized options
 set background=dark
 set t_Co=16
-colorscheme solarized
+silent! colorscheme solarized
 filetype plugin indent on
 set guitablabel=\[%N\]\ %t\ %M "tabs
 set guifont=Inconsolata:h13
