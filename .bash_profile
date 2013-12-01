@@ -3,6 +3,8 @@
 
 #enable magical colours of utils
 force_color_prompt=yes
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # history settings
 HISTCONTROL=ignoreboth
