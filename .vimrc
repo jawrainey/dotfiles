@@ -8,12 +8,21 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim.git'
+Bundle 'tpope/vim-fugitive'
 
 "Colorschemes"
 Bundle 'altercation/vim-colors-solarized.git'
 
 "Bundle settings"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+"NERDTree settings"
+let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$', '\.class$']
+let NERDTreeMinimalUI=1
+let NERDTreeDirArrows=1
+
+"ctrlp settings"
+let ctrlp_show_hidden = 1
 
 "Basic settings"
 set nocompatible
@@ -85,8 +94,3 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-"NERDTree settings"
-let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$', '\.class$']
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
