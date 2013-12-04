@@ -9,6 +9,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'tpope/vim-fugitive'
+Bundle 'bling/vim-bufferline'
+Bundle 'bling/vim-airline'
 
 "Colorschemes"
 Bundle 'altercation/vim-colors-solarized.git'
@@ -23,6 +25,7 @@ let NERDTreeDirArrows=1
 
 "ctrlp settings"
 let ctrlp_show_hidden = 1
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 "Basic settings"
 set nocompatible
