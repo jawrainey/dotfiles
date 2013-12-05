@@ -5,7 +5,6 @@ call vundle#rc()
 "General enhancements"
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'tpope/vim-fugitive'
@@ -17,11 +16,6 @@ Bundle 'altercation/vim-colors-solarized.git'
 
 "Bundle settings"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-"NERDTree settings"
-let NERDTreeIgnore = ['\.pyc$', '\~$', '\.rbc$', '\.class$']
-let NERDTreeMinimalUI=1
-let NERDTreeDirArrows=1
 
 "ctrlp settings"
 let ctrlp_show_hidden = 1
