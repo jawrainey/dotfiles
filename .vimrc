@@ -37,8 +37,7 @@ set autoread
 set background=dark
 set t_Co=16
 silent! colorscheme solarized
-filetype plugin indent on
-set guitablabel=\[%N\]\ %t\ %M "tabs
+set guitablabel=\[%N\]\ %t\ %M
 set guifont=Inconsolata:h13
 
 "Search settings"
@@ -49,14 +48,18 @@ set ignorecase
 set smartcase
 
 "Indentation settings"
+filetype indent on
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set autoindent
 set copyindent
-set smartindent
 set smarttab
+
+"Create the other brace"
+inoremap { {<CR>}<Esc>ko
+inoremap ( ()<left>
+inoremap [ []<left>
 
 "Command-line completion"
 set wildmenu
@@ -69,7 +72,7 @@ set textwidth=79
 set formatoptions=qrn1
 
 "History settings"
-set history=500
+set history=1000
 set undolevels=1000 
 
 "Get rid of annoying bell sound"
@@ -79,12 +82,6 @@ au GUIEnter * set visualbell t_vb=
 "Statusline settings"
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
-
-"Use the damn hjkl keys"
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
 
 "Easy window navigation"
 map <C-h> <C-w>h
