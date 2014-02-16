@@ -17,7 +17,7 @@ HISTIGNORE=?:??:???:clear:vmod:bmod:bsave:tmux
 
 # Include aliases
 if [ -f ~/.bash_aliases ] ; then
-    source ~/.bash_aliases
+  source ~/.bash_aliases
 fi
 
 # [folder-name] -> commands
@@ -43,12 +43,12 @@ fi
 
 # let there be color!
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-        export TERM='xterm-256color'
+  export TERM='xterm-256color'
 else
-        export TERM='xterm-color'
+  export TERM='xterm-color'
 fi
 
 # Git auto-completion
 if [ -f ~/.git-completion.bash ]; then
-    source ~/.git-completion.bash
+  source ~/.git-completion.bash
 fi
