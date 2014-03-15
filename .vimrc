@@ -11,6 +11,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 
+"Syntax improvements"
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'elzr/vim-json'
+
 "Colorschemes"
 Bundle 'altercation/vim-colors-solarized.git'
 
