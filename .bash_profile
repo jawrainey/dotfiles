@@ -52,3 +52,7 @@ fi
 if [ -f ~/.git-completion.bash ]; then
   source ~/.git-completion.bash
 fi
+
+# Urgh! Messy desktops!
+# Based on: https://github.com/holman/dotfiles/blob/master/bin/todo
+todo() ( touch ~/Desktop/"$1" )
