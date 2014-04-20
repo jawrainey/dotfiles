@@ -7,9 +7,9 @@ This repo contains my config files for git, vim and bash, which I continue to bu
     git clone http://github.com/jawrainey/dotfiles.git ~/dotfiles
     cd ~/dotfiles && ./install.sh
 
-## Plugins
+## Vim plugins
 
-I use [vundle](https://github.com/gmarik/vundle) to easily manage and keep my my plugins up-to-date.
+I use [vundle](https://github.com/gmarik/vundle) to easily manage and keep my vim plugins up-to-date.
 I try to keep my settings and use of plugins minimal. The ones that I use are:
 
 - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/): code-completion as you type.
