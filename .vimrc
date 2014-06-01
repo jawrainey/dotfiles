@@ -36,6 +36,7 @@ set mouse=a
 set shortmess=I
 set showmatch
 set autoread
+set cursorline
 
 "solarized options
 set background=dark
