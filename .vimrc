@@ -88,6 +88,10 @@ au GUIEnter * set visualbell t_vb=
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
 
+"Spell checking
+set spelllang=en_gb
+set spell
+
 "Easy window navigation"
 map <C-h> <C-w>h
 map <C-j> <C-w>j
