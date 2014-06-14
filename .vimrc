@@ -37,6 +37,7 @@ set shortmess=I
 set showmatch
 set autoread
 set cursorline
+set autochdir
 
 "solarized options
 set background=dark
@@ -87,6 +88,10 @@ au GUIEnter * set visualbell t_vb=
 "Statusline settings"
 set laststatus=2
 let g:Powerline_symbols = 'fancy'
+
+"Spell checking
+set spelllang=en_gb
+set spell
 
 "Easy window navigation"
 map <C-h> <C-w>h
