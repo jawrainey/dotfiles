@@ -101,3 +101,6 @@ map <C-l> <C-w>l
 
 "Automagically remove trailing white spaces
 autocmd BufWritePre * :%s/\s\+$//e
+
+"Use standard 4 spaces in Python
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
