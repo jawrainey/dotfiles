@@ -63,7 +63,7 @@ set copyindent
 set smarttab
 
 "Create the other brace"
-inoremap { {<CR>}<Esc>ko
+inoremap { {}<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 
