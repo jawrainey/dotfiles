@@ -39,12 +39,20 @@ set autoread
 set cursorline
 set autochdir
 
-"solarized options
-set background=dark
+" Theme settings"
 set t_Co=16
-silent! colorscheme solarized
-set guitablabel=\[%N\]\ %t\ %M
-set guifont=Inconsolata:h13
+colorscheme solarized
+
+"GUI (MacVim) specific settings"
+if has('gui_running')
+  set background=light
+  set gcr=n:blinkon0 "Stop the cursor blinking!
+  set guitablabel=\[%N\]\ %t\ %M
+  set guifont=Inconsolata:h14
+  set linespace=5
+else
+  set background=dark
+endif
 
 "Search settings"
 set hlsearch
