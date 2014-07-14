@@ -10,6 +10,8 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
+Bundle 'jmcantrell/vim-virtualenv'
+Bundle 'klen/python-mode'
 
 "Syntax improvements"
 Bundle 'jelera/vim-javascript-syntax'
@@ -95,7 +97,6 @@ au GUIEnter * set visualbell t_vb=
 
 "Statusline settings"
 set laststatus=2
-let g:Powerline_symbols = 'fancy'
 
 "Spell checking
 set spelllang=en_gb
