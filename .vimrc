@@ -112,3 +112,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "Use standard 4 spaces in Python
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
+" netrw settings."
+let g:netrw_banner=0    " Remove help message
+let g:netrw_liststyle=3 " Enable tree view
