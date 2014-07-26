@@ -116,3 +116,9 @@ autocmd FileType python setlocal shiftwidth=4 tabstop=4
 " netrw settings."
 let g:netrw_banner=0    " Remove help message
 let g:netrw_liststyle=3 " Enable tree view
+
+" Better navigation of buffers
+" Jump to a buffer by entering its name or number
+map gp :ls<cr>:b<space>
+" Delete the current buffer
+map gd :bd<cr>
