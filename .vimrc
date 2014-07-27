@@ -24,7 +24,9 @@ Bundle 'altercation/vim-colors-solarized.git'
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "Basic settings"
+let mapleader=","
 set nocompatible
+set encoding=utf-8
 syntax on
 set backspace=indent,eol,start
 set wildignore=*.swp,*.bak,*.pyc,*.class
@@ -36,6 +38,7 @@ set showmatch
 set autoread
 set cursorline
 set autochdir
+set hidden "Show hidden buffers.
 
 " Theme settings"
 set t_Co=16
@@ -85,7 +88,7 @@ set formatoptions=qrn1
 
 "History settings"
 set history=1000
-set undolevels=1000 
+set undolevels=1000
 
 "Get rid of annoying bell sound"
 set noerrorbells visualbell t_vb=
