@@ -97,6 +97,10 @@ set laststatus=2
 "Spell checking
 set spelllang=en_gb
 set spell
+set dictionary=spell
+set complete+=kspell
+setlocal spell
+autocmd BufRead,BufNewFile *.md setlocal spell
 
 "Easy window navigation"
 map <C-h> <C-w>h
@@ -109,6 +113,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 "Use standard 4 spaces in Python
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
+
 "netrw settings
 let g:netrw_banner=0    " Remove help message
 let g:netrw_liststyle=3 " Enable tree view
