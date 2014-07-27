@@ -23,10 +23,6 @@ Bundle 'altercation/vim-colors-solarized.git'
 "Bundle settings"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-"ctrlp settings"
-let ctrlp_show_hidden = 1
-let g:ctrlp_cmd = 'CtrlPMixed'
-
 "Basic settings"
 set nocompatible
 syntax on
@@ -124,12 +120,20 @@ map gp :ls<cr>:b<space>
 " Delete the current buffer
 map gd :bd<cr>
 
+" Reduce the options on the default CtrlP status bar.
+fu! CtrlP_main_status(...)
+  let item = ' ' . (a:5 == 'mru files' ? 'mru' : a:5) . ' '
+  let dir = '%4*%*' . fnamemodify(getcwd(), ':~') . '%4*%*'
+  retu '»' . item . '«' . '%=%<  ' . dir . ' '
+endf
+
 " Airline settings
 let g:airline_symbols = {}
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_symbols.branch= '⎇ '
-" Remove unnecessary sections.
+
+" Remove unnecessary sections from vim-airline
 function! AirLineInit()
   let g:airline_section_a = '» %f «'
   let g:airline_section_b = ''
@@ -137,6 +141,8 @@ function! AirLineInit()
   let g:airline_section_x = ''
   let g:airline_section_y = '%c'
   let g:airline_section_z = airline#section#create(['branch'])
+  " Set CtrlP settings here as AirLine overrides them on initialisation
+  let g:ctrlp_status_func = { 'main': 'CtrlP_main_status' }
 endfunction
 
 autocmd Vimenter * call AirLineInit()
