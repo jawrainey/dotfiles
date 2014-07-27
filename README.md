@@ -9,8 +9,7 @@ This repo contains my config files for git, vim and bash, which I continue to bu
 
 ## Vim plugins
 
-I use [vundle](https://github.com/gmarik/vundle) to easily manage and keep my vim plugins up-to-date.
-I try to keep my settings and use of plugins minimal. The ones that I use are:
+I try to use built-in features instead of plugins (i.e. netrw > nerdtree). The plugins that I do use are:
 
 - [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/): code-completion as you type.
 - [Syntastic](https://github.com/scrooloose/syntastic): syntax checker.
@@ -21,7 +20,8 @@ I try to keep my settings and use of plugins minimal. The ones that I use are:
 - [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv): better virtualenv support than `python-mode`.
 - [python-mode](https://github.com/klen/python-mode): makes Python development a breeze.
 - [vim-json](https://github.com/elzr/vim-json): better `JSON` highlighting and folding.
-- [Solarized color-scheme](https://github.com/altercation/vim-colors-solarized): always the dark theme.
+- [vim-gitgutter](https://github.com/airblade/vim-gitgutter): display diff symbol (+,-,~) in the gutter column.
+- [Solarized color-scheme](https://github.com/altercation/vim-colors-solarized): beautiful light & dark themes.
 
 ## License
 

@@ -12,6 +12,7 @@ Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'klen/python-mode'
+Bundle 'vim-gitgutter'
 
 "Syntax improvements"
 Bundle 'jelera/vim-javascript-syntax'
