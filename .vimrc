@@ -123,3 +123,20 @@ let g:netrw_list_hide = '^\..*,\.pyc$\.py.swp' " Ignore specific files
 map gp :ls<cr>:b<space>
 " Delete the current buffer
 map gd :bd<cr>
+
+" Airline settings
+let g:airline_symbols = {}
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_symbols.branch= '⎇ '
+" Remove unnecessary sections.
+function! AirLineInit()
+  let g:airline_section_a = '» %f «'
+  let g:airline_section_b = ''
+  let g:airline_section_c = ''
+  let g:airline_section_x = ''
+  let g:airline_section_y = '%c'
+  let g:airline_section_z = airline#section#create(['branch'])
+endfunction
+
+autocmd Vimenter * call AirLineInit()
