@@ -4,6 +4,7 @@ alias c="clear;ls"
 alias ..='cd ..'
 alias opn="nautilus"
 alias py="python"
+alias ipy="ipython"
 alias ll="ls -lh"
 alias la="ls -alh"
 alias dev='cd ~/Dropbox/dev/;ls'

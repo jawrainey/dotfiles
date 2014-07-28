@@ -126,8 +126,8 @@ let g:netrw_list_hide = '^\..*,\.pyc$\.py.swp' " Ignore specific files
 " Better navigation of buffers
 " Jump to a buffer by entering its name or number
 map gp :ls<cr>:b<space>
-" Delete the current buffer
-map gd :bd<cr>
+" Delete a specific buffer
+map gd :ls<cr>:bd<space>
 
 " Reduce the options on the default CtrlP status bar.
 fu! CtrlP_main_status(...)
