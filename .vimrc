@@ -1,8 +1,7 @@
-"Setup Vundle - it's awesome!"
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"General enhancements"
+" PLUGINS
 Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
@@ -13,144 +12,104 @@ Bundle 'bling/vim-airline'
 Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'klen/python-mode'
 Bundle 'vim-gitgutter'
-
-"Syntax improvements"
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'elzr/vim-json'
-
-"Colorschemes"
 Bundle 'altercation/vim-colors-solarized.git'
 
-"Bundle settings"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+" GENERAL SETTINGS
+syntax on                                       " Enable syntax highlighting
+let mapleader=","                               " Change default mapleader from \ to ,
+set autoread                                    " Automatically reads file if changes outside of vim
+set autochdir                                   " Switch working dir when a different file/buffer opened
+set cursorline                                  " Highlight the line the cursor is on
+set hidden                                      " Show hidden buffers
+set relativenumber                              " Better navigation with j/k
+set shortmess=tIAa                              " Abbreviate prompt messages, i.e. 'written' becomes 'w'
+set splitbelow                                  " Opens split window below
+set splitright                                  " Virtual split opens window to the right
+set textwidth=79                                " Maximum width of text to be inserted
+set history=1000                                " Keep a very long history!
+set visualbell t_vb=                            " Get rid of annoying bell sound
+set laststatus=2                                " Always show a status line
 
-"Basic settings"
-let mapleader=","
-set encoding=utf-8
-syntax on
-set backspace=indent,eol,start
-set wildignore=*.swp,*.bak,*.pyc,*.class
-set virtualedit=onemore
-set number
-set mouse=a
-set shortmess=I
-set showmatch
-set autoread
-set cursorline
-set autochdir
-set hidden "Show hidden buffers.
+" THEMING
+set t_Co=256                                    " Enable 256 colours in the terminal
+colorscheme solarized                           " Is there a more refined theme?
+set background=light                            " I have seen the light...
 
-" Theme settings"
-set t_Co=16
-colorscheme solarized
+" SEARCHING
+set hlsearch                                    " Highlight searches [use :noh to clear]
+set incsearch                                   " Highlight dynamically as pattern is typed
+set ignorecase                                  " Ignore case when searching
 
-"GUI (MacVim) specific settings"
+" INDENTATION
+filetype indent on                              " Enable filetype indentation detection
+set tabstop=2                                   " The number of spaces a tab in a file counts for
+set shiftwidth=2                                " The number of spaces to use to auto-indent (<<, >>)
+set softtabstop=2                               " The number of spaces a tab counts for when
+set expandtab                                   " Use spaces instead of tabs when inserting
+set copyindent                                  " When auto-indenting copy the structure of existing lines
+
+" COMMAND LINE OPTIONS
+set wildmenu                                    " Show a list of possible completions
+set wildmode=list:longest                       " Tab autocomplete longest possible part of a string, then list
+set wildignore+=*.swp,*.bak,*.pyc,*.class       " Ignore these files when autocompleting
+set wildignore+=.DS_Store,.git,*~,*.sw?,*.tmp   " Also ignore these..
+
+" SPELL CHECKING
+set spell                                       " Enable spell check by default - useful when writing comments.
+set spelllang=en_gb                             " Use British spelling
+set complete+=kspell                            " Use the currently active spell checking
+
+" GUI
 if has('gui_running')
-  set background=light
-  set gcr=n:blinkon0 "Stop the cursor blinking!
-  set guitablabel=\[%N\]\ %t\ %M
-  set guifont=Inconsolata:h14
-  set linespace=5
-else
-  set background=dark
+  set guifont=Inconsolata:h14                   " A beautiful monospace font
+  set guicursor=n:blinkon0                      " Stop the cursor blinking!
+  set linespace=5                               " Improve the line-height spacing
 endif
 
-"Search settings"
-set hlsearch
-set incsearch
-set showmatch
-set ignorecase
-set smartcase
+" NETRW
+let g:netrw_banner=0                            " Remove help message
+let g:netrw_liststyle=3                         " Enable tree view
+let g:netrw_list_hide='^\..*,\.pyc$\.py.swp'    " Ignore specific files
 
-"Indentation settings"
-filetype indent on
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set copyindent
-set smarttab
-
-"Create the other brace"
-inoremap { {}<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-
-"Command-line completion"
-set wildmenu
-set wildmode=list:longest
-set completeopt=longest,menuone
-
-"Better line wrapping"
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-
-"History settings"
-set history=1000
-set undolevels=1000
-
-"Get rid of annoying bell sound"
-set noerrorbells visualbell t_vb=
-au GUIEnter * set visualbell t_vb=
-
-"Statusline settings"
-set laststatus=2
-
-"Spell checking
-set spelllang=en_gb
-set spell
-set dictionary=spell
-set complete+=kspell
-setlocal spell
-autocmd BufRead,BufNewFile *.md setlocal spell
-
-"Easy window navigation"
+" MAPPINGS
+" Better navigation of buffers
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-"Automagically remove trailing white spaces
-autocmd BufWritePre * :%s/\s\+$//e
-
-"Use standard 4 spaces in Python
-autocmd FileType python setlocal shiftwidth=4 tabstop=4
-
-"netrw settings
-let g:netrw_banner=0    " Remove help message
-let g:netrw_liststyle=3 " Enable tree view
-let g:netrw_list_hide = '^\..*,\.pyc$\.py.swp' " Ignore specific files
-
-" Better navigation of buffers
-" Jump to a buffer by entering its name or number
+" Go to a specific buffer
 map gp :ls<cr>:b<space>
 " Delete a specific buffer
 map gd :ls<cr>:bd<space>
 
-" Reduce the options on the default CtrlP status bar.
+" PLUGINS
 fu! CtrlP_main_status(...)
-  let item = ' ' . (a:5 == 'mru files' ? 'mru' : a:5) . ' '
-  let dir = '%4*%*' . fnamemodify(getcwd(), ':~') . '%4*%*'
-  retu '»' . item . '«' . '%=%<  ' . dir . ' '
+  " Reduce the options on the default CtrlP status bar to match AirLine, i.e.
+  " » TYPE_OF_SEARCH «                                        VIM_PROJECT_DIR
+  retu '»' . a:5. '«' . '%=%<  ' . '%4*%*' . fnamemodify(getcwd(), ':~') . '%4*%*' . ' '
 endf
 
-" Airline settings
-let g:airline_symbols = {}
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols.branch= '⎇ '
-
-" Remove unnecessary sections from vim-airline
 function! AirLineInit()
-  let g:airline_section_a = '» %f «'
-  let g:airline_section_b = ''
-  let g:airline_section_c = ''
-  let g:airline_section_x = ''
-  let g:airline_section_y = '%c'
-  let g:airline_section_z = airline#section#create(['branch'])
-  " Set CtrlP settings here as AirLine overrides them on initialisation
-  let g:ctrlp_status_func = { 'main': 'CtrlP_main_status' }
+  " Remove default symbols (>) in favour of » below
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
+  let g:airline_symbols.branch='⎇ '
+
+  " Remove unnecessary sections from vim-airline
+  let g:airline_section_a='» %f «'
+  let g:airline_section_b=''
+  let g:airline_section_c=''
+  let g:airline_section_x=''
+  let g:airline_section_y='%c'
+  let g:airline_section_z=airline#section#create(['branch'])
+
+  " Required as AirLine overrides them on initialisation
+  let g:ctrlp_status_func={ 'main': 'CtrlP_main_status' }
 endfunction
 
-autocmd Vimenter * call AirLineInit()
+" AUTO COMMANDS
+autocmd Vimenter * call AirLineInit()                   " Load the defined AirLine settings above
+autocmd BufWritePre * :%s/\s\+$//e                      " Automatically remove trailing white spaces on save
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 " Use four spaces for tabs in Python
