@@ -11,6 +11,7 @@ Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'klen/python-mode'
 Bundle 'vim-gitgutter'
+Bundle 'Raimondi/delimitMate'
 Bundle 'jelera/vim-javascript-syntax'
 Bundle 'elzr/vim-json'
 Bundle 'altercation/vim-colors-solarized.git'
@@ -107,6 +108,8 @@ function! AirLineInit()
   " Required as AirLine overrides them on initialisation
   let g:ctrlp_status_func={ 'main': 'CtrlP_main_status' }
 endfunction
+
+let delimitMate_expand_cr=1                             " Expand the brackets and add a new line on ENTER
 
 " AUTO COMMANDS
 autocmd Vimenter * call AirLineInit()                   " Load the defined AirLine settings above
