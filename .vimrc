@@ -9,7 +9,6 @@ Bundle 'kien/ctrlp.vim.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
-Bundle 'jmcantrell/vim-virtualenv'
 Bundle 'klen/python-mode'
 Bundle 'vim-gitgutter'
 Bundle 'jelera/vim-javascript-syntax'
@@ -63,6 +62,7 @@ set complete+=kspell                            " Use the currently active spell
 
 " GUI
 if has('gui_running')
+  set guioptions-=rL                            " Remove the scrollbar
   set guifont=Inconsolata:h14                   " A beautiful monospace font
   set guicursor=n:blinkon0                      " Stop the cursor blinking!
   set linespace=5                               " Improve the line-height spacing
@@ -96,15 +96,14 @@ function! AirLineInit()
   let g:airline_left_sep=''
   let g:airline_right_sep=''
   let g:airline_symbols.branch='⎇ '
-
   " Remove unnecessary sections from vim-airline
   let g:airline_section_a='» %f «'
   let g:airline_section_b=''
   let g:airline_section_c=''
-  let g:airline_section_x=''
+  " Show the name of the virtual environment if it exists.
+  let g:airline_section_x=g:pymode_virtualenv_path != '' ? split(g:pymode_virtualenv_path, '/')[-1] : ''
   let g:airline_section_y='%c'
   let g:airline_section_z=airline#section#create(['branch'])
-
   " Required as AirLine overrides them on initialisation
   let g:ctrlp_status_func={ 'main': 'CtrlP_main_status' }
 endfunction
