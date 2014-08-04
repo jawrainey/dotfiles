@@ -110,6 +110,9 @@ function! AirLineInit()
 endfunction
 
 let delimitMate_expand_cr=1                             " Expand the brackets and add a new line on ENTER
+let g:ctrlp_show_hidden=1                               " Include hidden files in the search
+let g:ctrlp_working_path_mode=0                         " Search from current directory instead of project root
+let g:ctrlp_match_window='min:1,max:5'                  " The height that the window can size to based on results
 
 " AUTO COMMANDS
 autocmd Vimenter * call AirLineInit()                   " Load the defined AirLine settings above
