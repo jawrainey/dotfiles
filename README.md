@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repo contains my config files for git, vim and bash, which I continue to built up over the years.
+> Personal configuration files for git, vim and bash, which are aimed to be minimal.
 
 ## Installation
 
@@ -17,7 +17,6 @@ I try to use built-in features instead of plugins (i.e. netrw > nerdtree). The p
 - [vim-fugitive](https://github.com/tpope/vim-fugitive): git integration within vim.
 - [vim-bufferline](https://github.com/bling/vim-bufferline): shows buffers on statusline.
 - [vim-airplane](https://github.com/bling/vim-airline): more info on the statusline.
-- [vim-virtualenv](https://github.com/jmcantrell/vim-virtualenv): better virtualenv support than `python-mode`.
 - [python-mode](https://github.com/klen/python-mode): makes Python development a breeze.
 - [vim-json](https://github.com/elzr/vim-json): better `JSON` highlighting and folding.
 - [vim-gitgutter](https://github.com/airblade/vim-gitgutter): display diff symbol (+,-,~) in the gutter column.
@@ -25,4 +24,4 @@ I try to use built-in features instead of plugins (i.e. netrw > nerdtree). The p
 
 ## License
 
-- These dotfiles are licensed under the [MIT License.](https://github.com/jawrainey/dotfiles/blob/master/LICENSE.txt)
+- Licensed under [MIT](https://github.com/jawrainey/dotfiles/blob/master/LICENSE.txt).
