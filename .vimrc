@@ -72,7 +72,7 @@ endif
 " NETRW
 let g:netrw_banner=0                            " Remove help message
 let g:netrw_liststyle=3                         " Enable tree view
-let g:netrw_list_hide='^\..*,\.pyc$\.py.swp'    " Ignore specific files
+let g:netrw_list_hide='^\..*,\.pyc$,\.swp$'     " Ignore specific files
 
 " MAPPINGS
 " Better navigation of buffers
