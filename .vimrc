@@ -54,7 +54,7 @@ set copyindent                                  " When auto-indenting copy the s
 set wildmenu                                    " Show a list of possible completions
 set wildmode=list:longest                       " Tab autocomplete longest possible part of a string, then list
 set wildignore+=*.swp,*.bak,*.pyc,*.class       " Ignore these files when autocompleting
-set wildignore+=.DS_Store,.git,*~,*.sw?,*.tmp   " Also ignore these..
+set wildignore+=.DS_Store,.git,*~,*.sw?,*.rope* " Also ignore these...
 
 " SPELL CHECKING
 set spell                                       " Enable spell check by default - useful when writing comments.
@@ -89,7 +89,7 @@ map gd :ls<cr>:bd<space>
 fu! CtrlP_main_status(...)
   " Reduce the options on the default CtrlP status bar to match AirLine, i.e.
   " » TYPE_OF_SEARCH «                                        VIM_PROJECT_DIR
-  retu '»' . a:5. '«' . '%=%<  ' . '%4*%*' . fnamemodify(getcwd(), ':~') . '%4*%*' . ' '
+  retu '» ' . a:5. ' «' . '%=%<  ' . '%4*%*' . fnamemodify(getcwd(), ':~') . '%4*%*' . ' '
 endf
 
 function! AirLineInit()
