@@ -53,7 +53,7 @@ set copyindent                                  " When auto-indenting copy the s
 " COMMAND LINE OPTIONS
 set wildmenu                                    " Show a list of possible completions
 set wildmode=list:longest                       " Tab autocomplete longest possible part of a string, then list
-set wildignore+=*.swp,*.bak,*.pyc,*.class       " Ignore these files when autocompleting
+set wildignore+=*.swp,*.pyc,*.class,*venv/*     " Ignore these files when autocompleting
 set wildignore+=.DS_Store,.git,*~,*.sw?,*.rope* " Also ignore these...
 
 " SPELL CHECKING
