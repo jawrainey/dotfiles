@@ -31,6 +31,7 @@ set textwidth=79                                " Maximum width of text to be in
 set history=1000                                " Keep a very long history!
 set visualbell t_vb=                            " Get rid of annoying bell sound
 set laststatus=2                                " Always show a status line
+set completeopt=menuone,longest                 " Improve completion in insert mode via popup menu
 
 " THEMING
 set t_Co=256                                    " Enable 256 colours in the terminal
