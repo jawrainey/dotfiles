@@ -37,7 +37,7 @@ set completeopt=menuone,longest                 " Improve completion in insert m
 
 " THEMING
 set t_Co=256                                    " Enable 256 colours in the terminal
-colorscheme solarized                           " Is there a more refined theme?
+silent! colorscheme solarized                   " Is there a more refined theme?
 set background=light                            " I have seen the light...
 
 " SEARCHING
