@@ -1,26 +1,22 @@
-#1 Clone vundle to dotfiles folder (which it creates)
-git clone http://github.com/gmarik/vundle.git ~/dotfiles/.vim/bundle/vundle
+#!/usr/bin/env bash
 
-#2 Create backup of user dotfiles and custom dotfiles.
-mkdir $HOME/dotfiles/backup
-echo "Creating a backup of your own dotfiles to $HOME/dotfiles/backup & linking new dotfiles to your system."
+# Clone vundle to home folder to create the .vim folder.
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-for filename in .bash_profile .bash_aliases .vim .vimrc .gitconfig .git-completion.bash
-do
-  echo "Moving $HOME/$filename to $HOME/dotfiles/backup"
-  mv "$HOME/$filename" "$HOME/dotfiles/backup"
+# Copy dotfiles to home directory.
+rsync --exclude ".git/" --exclude ".DS_Store" --exclude "install.sh" \
+      --exclude "README.md" --exclude "LICENSE.txt" -avh --no-perms . ~;
 
-  echo "Linking $HOME/dotfiles/$filename to $HOME/$filename"
-  ln -s "$HOME/dotfiles/$filename" "$HOME/$filename"
-done
+# Install plugins after we have moved the .vimrc to the home directory.
+# This means that the .vim folder is created dynamically with each install.
+vim +PluginInstall +qall
 
-#3 Install all the bundles
-echo "Installing all bundles with vundle..."
-vim +BundleInstall +qall
+# Display the changes we have made.
+source ~/.bash_profile
 
-#4 Update specific bundle requirements.
-echo "Compiling YouCompleteMe bundle with C-Family language support."
-cd $HOME/dotfiles/.vim/bundle/YouCompleteMe
-./install.sh --clang-completer
-
-echo "Installation of dotfiles complete." 
+read -p "Would you like to install YouCompleteMe support? (y/n) " -n 1;
+echo ""
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  cd $HOME/dotfiles/.vim/bundle/YouCompleteMe
+  ./install.sh --clang-completer
+fi;
