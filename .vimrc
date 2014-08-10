@@ -1,20 +1,22 @@
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " PLUGINS
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bling/vim-bufferline'
-Bundle 'bling/vim-airline'
-Bundle 'klen/python-mode'
-Bundle 'vim-gitgutter'
-Bundle 'Raimondi/delimitMate'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'elzr/vim-json'
-Bundle 'altercation/vim-colors-solarized.git'
+Plugin 'gmarik/vundle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-bufferline'
+Plugin 'bling/vim-airline'
+Plugin 'klen/python-mode'
+Plugin 'vim-gitgutter'
+Plugin 'Raimondi/delimitMate'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'elzr/vim-json'
+Plugin 'altercation/vim-colors-solarized.git'
+
+call vundle#end()
 
 " GENERAL SETTINGS
 syntax on                                       " Enable syntax highlighting
