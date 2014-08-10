@@ -17,6 +17,6 @@ source ~/.bash_profile
 read -p "Would you like to install YouCompleteMe support? (y/n) " -n 1;
 echo ""
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  cd $HOME/dotfiles/.vim/bundle/YouCompleteMe
+  cd $HOME/.vim/bundle/YouCompleteMe
   ./install.sh --clang-completer
 fi;
