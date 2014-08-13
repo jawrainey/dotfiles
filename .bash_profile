@@ -10,7 +10,7 @@ HISTSIZE=10000
 HISTFILESIZE=$HISTSIZE
 
 # Load the shell dotfiles if they exist
-for file in ~/.{bash_aliases,bash_prompt}; do
+for file in ~/.{path,bash_aliases,bash_prompt}; do
   [ -r "$file" ] && [ -f "$file" ] && source $file;
 done;
 unset file;
