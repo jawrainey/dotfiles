@@ -4,7 +4,7 @@
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Copy dotfiles to home directory.
-rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+rsync --exclude ".git/" --exclude".gitignore" --exclude ".DS_Store" --exclude "bootstrap.sh" \
       --exclude "README.md" --exclude "LICENSE.txt" -avh --no-perms . ~;
 
 # Install plugins after we have moved the .vimrc to the home directory.
