@@ -15,18 +15,11 @@ for file in ~/.{path,bash_aliases,bash_prompt}; do
 done;
 unset file;
 
-# enable here as it may not be enabled in other sources.
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
-# Git auto-completion
-if [ -f ~/.git-completion.bash ]; then
-  source ~/.git-completion.bash
+# When git is installed via brew it is sourced in the bash_completion dir
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+elif [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
 fi
 
 # Urgh! Messy desktops!
