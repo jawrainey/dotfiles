@@ -16,7 +16,7 @@ done;
 unset file;
 
 # When git is installed via brew it is sourced in the bash_completion dir
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
   . $(brew --prefix)/etc/bash_completion
 elif [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
