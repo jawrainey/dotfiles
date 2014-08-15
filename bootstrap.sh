@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-# Clone vundle to home folder to create the .vim folder.
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Clone vundle if it does not already exist.
+if [ -d "$HOME/.vim/bundle/Vundle" ]; then
+  cd ~/.vim/bundle/vundle/; git pull; cd -;
+else
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi;
 
 # Copy dotfiles to home directory.
 rsync --exclude ".git/" --exclude ".gitignore" --exclude ".DS_Store" --exclude "bootstrap.sh" \
