@@ -2,6 +2,8 @@
 
 > Personal minimalistic configuration files for git, vim, and bash.
 
+![Screenshot of the shell prompt](https://i.imgur.com/Zqktjgb.png)
+
 ## Installation
 
 ``` bash
@@ -9,9 +11,7 @@
 » cd ~/dotfiles && source bootstrap.sh
 ```
 
-## Updating
-
-Rerun the bootstrap script to update the configuration files:
+Rerun the bootstrap script to **update** the configuration files:
 
 ``` bash
 » cd ~/dotfiles && source bootstrap.sh
@@ -25,9 +25,10 @@ If `~/.path` exists, it will be sourced along with the other files. Your persona
 export PATH="/usr/local/heroku/bin:$PATH"
 ```
 
-## Thanks to
+## Inspiration
 
 - [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) for his brilliant bash configurations.
+- [Jorge Peña](https://github.com/blaenk/dots) for his minimalistic `.vimrc`.
 
 ## License
 
