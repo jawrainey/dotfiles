@@ -21,7 +21,3 @@ if which brew > /dev/null && [ -f "$(brew --prefix)/etc/bash_completion" ]; then
 elif [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
-
-# Urgh! Messy desktops!
-# Based on: https://github.com/holman/dotfiles/blob/master/bin/todo
-todo() ( touch ~/Desktop/"$1" )
