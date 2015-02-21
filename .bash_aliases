@@ -5,6 +5,7 @@ alias cl="clear;ls"
 alias ..='cd ..'
 alias ipy="ipython"
 alias dev='cd ~/Dropbox/dev/;ls'
+alias fyp='cd ~/Dropbox/uni/04/CM3203/project/'
 alias sf='vim ~/Dropbox/dev/spark.md'
 
 # Detect which `ls` flavor is in use
