@@ -4,9 +4,7 @@ alias c="clear"
 alias cl="clear;ls"
 alias ..='cd ..'
 alias ipy="ipython"
-alias dev='cd ~/Dropbox/dev/;ls'
-alias fyp='cd ~/Dropbox/uni/04/CM3203/project/'
-alias sf='vim ~/Dropbox/dev/spark.md'
+alias db='cd ~/Dropbox/;ls'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
