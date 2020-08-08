@@ -13,7 +13,7 @@ There are a few dependencies needed to get started:
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) for sensible defaults.
 - ZSH plugins:
   - [peco](https://github.com/jimeh/zsh-peco-history#oh-my-zsh) to enable peco via zsh.
-  - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+  - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) for prior commands in zsh.
 
 ## Installation
 
