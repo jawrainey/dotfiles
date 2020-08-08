@@ -9,18 +9,19 @@ fi;
 
 # Copy dotfiles to home directory.
 rsync --exclude ".git/" --exclude ".gitignore" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-      --exclude "README.md" --exclude "LICENSE.txt" -avh --no-perms . ~;
+      --exclude "README.md" --exclude "LICENSE.txt" --exclude "*.swp" -avh --no-perms . $HOME/;
 
 # Install plugins after we have moved the .vimrc to the home directory.
 # This means that the .vim folder is created dynamically with each install.
 vim +PluginInstall +qall
 
 # Display the changes we have made.
-source ~/.bash_profile
+source $HOME/.zshrc
 
-read -p "Would you like to install YouCompleteMe support? (y/n) " -n 1;
-echo ""
+echo -n 'Would you like to install YouCompleteMe support? (y/n)'
+read REPLY
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   cd $HOME/.vim/bundle/YouCompleteMe
   ./install.sh --clang-completer
+  cd -
 fi;

@@ -10,11 +10,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-bufferline'
 Plugin 'bling/vim-airline'
 Plugin 'klen/python-mode'
-Plugin 'vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'Raimondi/delimitMate'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'elzr/vim-json'
 Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -34,11 +35,6 @@ set history=1000                                " Keep a very long history!
 set visualbell t_vb=                            " Get rid of annoying bell sound
 set laststatus=2                                " Always show a status line
 set completeopt=menuone,longest                 " Improve completion in insert mode via popup menu
-
-" THEMING
-set t_Co=256                                    " Enable 256 colours in the terminal
-silent! colorscheme solarized                   " Is there a more refined theme?
-set background=light                            " I have seen the light...
 
 " SEARCHING
 set hlsearch                                    " Highlight searches [use :noh to clear]
@@ -112,6 +108,9 @@ function! AirLineInit()
   let g:ctrlp_status_func={ 'main': 'CtrlP_main_status' }
 endfunction
 
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
+
 let delimitMate_expand_cr=1                             " Expand the brackets and add a new line on ENTER
 let g:ctrlp_show_hidden=1                               " Include hidden files in the search
 let g:ctrlp_working_path_mode=0                         " Search from current directory instead of project root
@@ -121,3 +120,7 @@ let g:ctrlp_match_window='min:1,max:5'                  " The height that the wi
 autocmd Vimenter * call AirLineInit()                   " Load the defined AirLine settings above
 autocmd BufWritePre * :%s/\s\+$//e                      " Automatically remove trailing white spaces on save
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 " Use four spaces for tabs in Python
+
+" THEMING
+let g:solarized_termcolors=256                          " Manually force terminal support (OSX) for solarized
+silent! colorscheme solarized                           " Is there a more refined theme?
