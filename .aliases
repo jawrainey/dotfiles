@@ -36,4 +36,7 @@ alias poesafety="poetry run nox -rs safety"
 
 # Get External IP / Internet Speed: thanks @lewagon
 alias myip="curl https://ipinfo.io/json"
+alias localip="ipconfig getifaddr en0"
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+# Prints existing paths on new line
+alias paths='echo -e ${PATH//:/\\n}'

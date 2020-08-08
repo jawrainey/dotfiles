@@ -20,6 +20,10 @@ There are a few dependencies needed to get started:
 ``` bash
 » git clone http://github.com/jawrainey/dotfiles.git ~/dotfiles
 » cd ~/dotfiles && source bootstrap.sh
+
+# Configure git setings
+» git config --global user.name "{YOUR_NAME}"
+» git config --global user.email "{YOUR_EMAIL}"
 ```
 
 Rerun the bootstrap script to **update** the configuration files:
