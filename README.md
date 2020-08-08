@@ -4,16 +4,22 @@
 
 ![Screenshot of the shell prompt](https://i.imgur.com/Zqktjgb.png)
 
-## Installation
+## Dependencies
 
-Install the solarised colour theme [from here](https://github.com/tomislav/osx-terminal.app-colors-solarized) and [oh my zsh](https://github.com/ohmyzsh/ohmyzsh) before proceeding.
+There are a few dependencies needed to get started:
+
+- [Solarized OSX terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) preferred theme.
+- [peco](https://github.com/peco/peco#macos-homebrew-scarf) to improve history searching.
+- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) for sensible defaults.
+- ZSH plugins:
+  - [peco](https://github.com/jimeh/zsh-peco-history#oh-my-zsh) to enable peco via zsh.
+  - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh)
+
+## Installation
 
 ``` bash
 » git clone http://github.com/jawrainey/dotfiles.git ~/dotfiles
 » cd ~/dotfiles && source bootstrap.sh
-
-# Used to improve history searching
-» brew install peco
 ```
 
 Rerun the bootstrap script to **update** the configuration files:
@@ -24,7 +30,7 @@ Rerun the bootstrap script to **update** the configuration files:
 
 ## Specify the `$PATH`
 
-If `~/.path` exists, it will be sourced along with the other files. Personal zsh configuration belong here, for example:
+Add all your path exports to `.path`, which will be sourced along with the other files, e.g.
 
 ``` bash
 export PATH="/usr/local/heroku/bin:$PATH"
