@@ -1,20 +1,17 @@
 # Any changes to path go through here
-[[ -f "$HOME/.path" ]] && source "$HOME/.path"
+source "$HOME/.path"
 
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="sorin"
 
-plugins=(colorize docker docker-compose fd git osx virtualenv wd zsh-autosuggestions zsh-peco-history)
+plugins=(docker docker-compose fd git osx virtualenv wd zsh-autosuggestions zsh-peco-history)
 
 # see: https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
 
-ENABLE_CORRECTION="true"
-
 source $ZSH/oh-my-zsh.sh
-
-[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+source "$HOME/.aliases"
 
 export LANG=en_GB.UTF-8
 
