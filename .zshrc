@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="sorin"
 
-plugins=(colorize docker docker-compose fd git osx poetry ssh-agent virtualenv wd zsh-autosuggestions zsh-peco-history)
+plugins=(colorize docker docker-compose fd git osx virtualenv wd zsh-autosuggestions zsh-peco-history)
 
 # see: https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
