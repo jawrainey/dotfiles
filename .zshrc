@@ -18,19 +18,16 @@ export LANG=en_GB.UTF-8
 # Preferred editor for local and remote sessions
 EDITOR='vim'
 
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+VIRTUAL_ENV_DISABLE_PROMPT=yes
 
-export VIRTUAL_ENV_DISABLE_PROMPT=yes
-
-# Add 've' to prompt when in virtual env
 function virtenv_indicator {
-    if [[ -z $VIRTUAL_ENV ]] then
-        psvar[1]=''
-    else
-        psvar[1]='ve'
-    fi
+  if [[ -z $VIRTUAL_ENV ]] then
+    psvar[1]=''
+  else
+    psvar[1]='(ve) '
+  fi
 }
 
 add-zsh-hook precmd virtenv_indicator
+
+PROMPT='%(1V.%1v.)'$PROMPT
