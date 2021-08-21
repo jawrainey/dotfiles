@@ -6,14 +6,13 @@
 
 ## Dependencies
 
-There are a few dependencies needed to get started:
-
-- [Solarized OSX terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) preferred theme.
 - [peco](https://github.com/peco/peco#macos-homebrew-scarf) to improve history searching.
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) for sensible defaults.
+- [fd](https://github.com/sharkdp/fd) for improved finding.
 - ZSH plugins:
   - [peco](https://github.com/jimeh/zsh-peco-history#oh-my-zsh) to enable peco via zsh.
   - [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh) for prior commands in zsh.
+- (Optional) [Solarized OSX terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) preferred theme.
 
 ## Installation
 
