@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Clone vundle if it does not already exist.
-if [ -d "$HOME/.vim/bundle/Vundle" ]; then
-  cd ~/.vim/bundle/vundle/; git pull; cd -;
+if [ -d "$HOME/.vim/bundle/Vundle.vim" ]; then
+  cd ~/.vim/bundle/Vundle.vim/; git pull; cd -;
 else
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi;
@@ -17,11 +17,3 @@ vim +PluginInstall +qall
 
 # Display the changes we have made.
 source $HOME/.zshrc
-
-echo -n 'Would you like to install YouCompleteMe support? (y/n)'
-read REPLY
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  cd $HOME/.vim/bundle/YouCompleteMe
-  ./install.sh --clang-completer
-  cd -
-fi;

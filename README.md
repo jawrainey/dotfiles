@@ -16,7 +16,7 @@
 
 ## Installation
 
-``` bash
+```bash
 » git clone http://github.com/jawrainey/dotfiles.git ~/dotfiles
 » cd ~/dotfiles && source bootstrap.sh
 
@@ -27,7 +27,7 @@
 
 Rerun the bootstrap script to **update** the configuration files:
 
-``` bash
+```bash
 » cd ~/dotfiles && source bootstrap.sh
 ```
 
@@ -35,7 +35,7 @@ Rerun the bootstrap script to **update** the configuration files:
 
 Add all your path exports to `.path`, which will be sourced along with the other files, e.g.
 
-``` bash
+```bash
 export PATH="/usr/local/heroku/bin:$PATH"
 ```
 

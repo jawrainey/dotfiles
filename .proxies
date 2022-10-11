@@ -1,0 +1,2 @@
+export https_proxy=http://TODO:8080
+export http_proxy=http://TODO:8080
