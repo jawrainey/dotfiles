@@ -9,9 +9,11 @@ else;
 
   sed -i -e "s,TODO,$prox,g" .proxies
   source .proxies
-  echo "Network proxy set to: " $https_proxy
+  echo "Network proxy set to: " $prox
 
   sed -i -e "s,TODO,$prox,g" .docker/config.json
 
-  echo "Docker proxy set to: " $https_proxy
+  echo "Docker proxy set to: " $prox
+
+  cp .docker $HOME
 fi;

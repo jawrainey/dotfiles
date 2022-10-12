@@ -7,9 +7,14 @@ else
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi;
 
+# Make this optional as not needed on personal laptop
+if [[ "$*" == *"with_proxies"* ]]; then
+  source "proxies.sh"
+fi
+
 # Copy dotfiles to home directory.
 rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" \
-  --exclude "LICENSE.txt" --exclude "*.swp" -avh --no-perms . $HOME/;
+  --exclude "LICENSE.txt" --exclude ".docker" --exclude "*.swp" -avh --no-perms . $HOME/;
 
 # Install plugins after we have moved the .vimrc to the home directory.
 # This means that the .vim folder is created dynamically with each install.
