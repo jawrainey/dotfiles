@@ -14,6 +14,7 @@ source "$HOME/.path"
 source "$HOME/.aliases"
 source "$HOME/.theme"
 source "$HOME/.zprofile"
+source "$HOME/.proxies"
 
 # Config FZF as desired
 export FZF_DEFAULT_OPTS='--no-height --border=sharp --no-reverse'
