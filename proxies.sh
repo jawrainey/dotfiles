@@ -15,5 +15,5 @@ else;
 
   echo "Docker proxy set to: " $prox
 
-  cp .docker $HOME
+  cp -r .docker $HOME
 fi;

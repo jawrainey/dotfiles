@@ -13,7 +13,7 @@ if [[ "$*" == *"with_proxies"* ]]; then
 fi
 
 # Copy dotfiles to home directory.
-rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" \
+rsync --exclude ".git/" --exclude ".DS_Store" --exclude "*.sh" --exclude "README.md" \
   --exclude "LICENSE.txt" --exclude ".docker" --exclude "*.swp" -avh --no-perms . $HOME/;
 
 # Install plugins after we have moved the .vimrc to the home directory.
