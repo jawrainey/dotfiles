@@ -27,6 +27,8 @@ dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
 # Say last n logs
 alias dtail='docker logs -f --tail=20 $1'
 
+# Count files/dirs in folder by pattern
+# alias count='find $1 -maxdepth 1 -name $2 | wc -l'
 # Lists all local ips
 alias localips="ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 # Prints existing paths on new line

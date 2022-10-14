@@ -31,14 +31,6 @@ Rerun the bootstrap script to **update** the configuration files:
 » cd ~/dotfiles && source bootstrap.sh
 ```
 
-## Specify the `$PATH`
-
-Add all your path exports to `.path`, which will be sourced along with the other files, e.g.
-
-```bash
-export PATH="/usr/local/heroku/bin:$PATH"
-```
-
 ## Inspiration
 
 - [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) for his brilliant bash configurations.

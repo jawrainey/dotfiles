@@ -13,8 +13,8 @@ source $ZSH/oh-my-zsh.sh
 source "$HOME/.path"
 source "$HOME/.aliases"
 source "$HOME/.theme"
-source "$HOME/.zprofile"
-source "$HOME/.proxies"
+# This may not be set, e.g., on local machine.
+[[ -f "$HOME/.proxies" ]] && source "$HOME/.proxies"
 
 # Config FZF as desired
 export FZF_DEFAULT_OPTS='--no-height --border=sharp --no-reverse'
