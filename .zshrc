@@ -1,21 +1,27 @@
-# Preferred editor for local and remote sessions
 EDITOR='vim'
+ZSH_THEME="rainey"
 
 # see: https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
 export HOMEBREW_NO_ANALYTICS=1
+export ZSH="$HOME/.oh-my-zsh"
+export FZF_DEFAULT_OPTS='--no-height --border=sharp --no-reverse'
 
 # each package creates aliases, exports, etc.
-plugins=(docker docker-compose fd git pyenv virtualenv wd zsh-ssh zsh-autosuggestions)
-
-export ZSH="$HOME/.oh-my-zsh"
+plugins=(
+  docker
+  docker-compose
+  fd
+  git
+  pyenv
+  virtualenv
+  wd
+  zsh-ssh
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
-source "$HOME/.path"
-source "$HOME/.aliases"
-source "$HOME/.theme"
-# This may not be set, e.g., on local machine.
-[[ -f "$HOME/.proxies" ]] && source "$HOME/.proxies"
 
-# Config FZF as desired
-export FZF_DEFAULT_OPTS='--no-height --border=sharp --no-reverse'
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+for file in $HOME/.{path,aliases,proxies,extras,fzf.zsh}; do
+  [ -f "$file" ] && source "$file";
+done;
