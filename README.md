@@ -16,7 +16,7 @@
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) for autocompletion of prior commands in zsh.
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) syntax highlighting for the shell zsh.
   - [pyenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv) loads pyenv and vitualenv if found. This provides access to python version in the prompt.
-- (Optional) [Solarized OSX terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) preferred theme.
+- (Optional) [Solarized terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) preferred theme.
 
 ## Installation & Updating
 

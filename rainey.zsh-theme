@@ -4,8 +4,6 @@ function venv_info {
   if [[ -z $VIRTUAL_ENV ]] then
     psvar[1]=""
   else
-    # local b="$(pyenv_prompt_info)"
-    # psvar[1]="(ve:"$b") "
     psvar[1]="(ve) "
   fi
 }
