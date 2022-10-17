@@ -31,7 +31,7 @@ if [[ "$*" == *"fzf"* ]]; then
 fi
 
 if [[ "$*" == *"zshp"* ]]; then
-  plugins="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins"
+  plugins="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins"
   git clone https://github.com/sunlei/zsh-ssh $plugins/zsh-ssh
   git clone https://github.com/zsh-users/zsh-autosuggestions $plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $plugins/zsh-syntax-highlighting
