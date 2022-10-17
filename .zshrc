@@ -14,7 +14,6 @@ plugins=(
   git
   pyenv
   virtualenv
-  wd
   zsh-ssh
   zsh-syntax-highlighting
   zsh-autosuggestions
