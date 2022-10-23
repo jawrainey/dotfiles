@@ -3,7 +3,6 @@ call vundle#begin()
 
 " PLUGINS
 Plugin 'gmarik/vundle'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim.git'
 Plugin 'tpope/vim-fugitive'

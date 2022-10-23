@@ -24,19 +24,12 @@ alias drmf='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 dri() { docker rmi $(docker images -q); }
 # Bash into running container
 dbash() { docker exec -it $(docker ps -aqf "name=$1") bash; }
+# Say last n logs
+alias dtail='docker logs -f --tail=20 $1'
 
-# Poetry
-alias ohmyzsh="vi ~/.oh-my-zsh"
-alias poe="poetry run"
-alias poenox="poetry run nox"
-alias poetests="poetry run -rs tests"
-alias poeblack="poetry run nox -rs black"
-alias poelint="poetry run nox -rs lint"
-alias poesafety="poetry run nox -rs safety"
-
-# Get External IP / Internet Speed: thanks @lewagon
-alias myip="curl https://ipinfo.io/json"
-alias localip="ipconfig getifaddr en0"
-alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+# Count files/dirs in folder by pattern
+# alias count='find $1 -maxdepth 1 -name $2 | wc -l'
+# Lists all local ips
+alias localips="ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}'"
 # Prints existing paths on new line
 alias paths='echo -e ${PATH//:/\\n}'

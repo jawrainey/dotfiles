@@ -5,15 +5,15 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   # Show what changed and by how much
   ll = log --stat --abbrev-commit
-	# Show the user email for the current repository.
+  # Show the user email for the current repository.
   whoami = config user.email
   # Removes a file from the index
   unstage = reset HEAD --
 [core]
   editor = vim
   autocrlf = input
-	excludesfile = ~/.gitignore
-	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+  excludesfile = ~/.gitignore
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 [color "branch"]
   current = yellow reverse
   local = yellow
