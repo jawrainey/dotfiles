@@ -16,14 +16,33 @@
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) for autocompletion of prior commands in zsh.
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) syntax highlighting for the shell zsh.
   - [pyenv](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv) loads pyenv and vitualenv if found. This provides access to python version in the prompt.
-- (Optional) [Solarized terminal theme](https://github.com/tomislav/osx-terminal.app-colors-solarized) preferred theme.
+- (Optional) Solarized terminal as preferred theme on [iterm2 (OSX)](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) and [terminator](https://github.com/ghuntley/terminator-solarized).
 
 ## Installation & Updating
+
+Before installing you should install all the [dependencies](#installing-dependencies) depending on your OS. Then you can install the dotfiles:
 
 ```bash
 » git clone http://github.com/jawrainey/dotfiles.git ~/dotfiles
 » # TODO: update .extras to override git config
 » cd ~/dotfiles && source bootstrap.sh
+```
+
+### Proxy Setup
+
+Run [`proxies.sh`](./proxies.sh) to install terminal and docker proxy settings.
+
+```bash
+» source proxies.sh
+```
+
+### Installing Dependencies
+
+Dependencies are grouped by type to make each optional, e.g., `linux` deps are not required on OSX.
+
+```bash
+# There are no docs so read deps.sh
+» source deps.sh [vim,python,fzf,zshp,linux]
 ```
 
 ## Inspiration
