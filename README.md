@@ -57,8 +57,6 @@ Dependencies are grouped by type to make each optional, e.g., `linux` deps are n
 » source scripts/deps.sh [vim,python,fzf,zshp,linux]
 ```
 
-### Gt
-
 ## Inspiration
 
 - [Mathias Bynens](https://github.com/mathiasbynens/dotfiles) for his brilliant bash configurations.
