@@ -24,16 +24,28 @@ Before installing you should install all the [dependencies](#installing-dependen
 
 ```bash
 » git clone http://github.com/jawrainey/dotfiles.git ~/dotfiles
-» # TODO: update .extras to override git config
 » cd ~/dotfiles && source bootstrap.sh
+```
+
+### (Optional) `.extras`
+
+Add any additional configurations will be sourced in `.zshrc`, e.g., git configurations:
+```
+GIT_AUTHOR_NAME="Forename Surname"
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+git config --global user.name "$GIT_AUTHOR_NAME"
+
+GIT_AUTHOR_EMAIL="email@domain.com"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+git config --global user.email "$GIT_AUTHOR_EMAIL"
 ```
 
 ### Proxy Setup
 
-Run [`proxies.sh`](./proxies.sh) to install terminal and docker proxy settings.
+Run [`proxies.sh`](scripts/proxies.sh) to install terminal and docker proxy settings.
 
 ```bash
-» source proxies.sh
+» source scripts/proxies.sh
 ```
 
 ### Installing Dependencies
@@ -42,8 +54,10 @@ Dependencies are grouped by type to make each optional, e.g., `linux` deps are n
 
 ```bash
 # There are no docs so read deps.sh
-» source deps.sh [vim,python,fzf,zshp,linux]
+» source scripts/deps.sh [vim,python,fzf,zshp,linux]
 ```
+
+### Gt
 
 ## Inspiration
 
