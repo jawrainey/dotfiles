@@ -2,7 +2,7 @@
 
 > Personal minimalistic configuration files for git, vim, and zsh.
 
-![Screenshot of the shell prompt](https://i.imgur.com/Zqktjgb.png)
+![Screenshot of the shell prompt](docs/rainey-theme.png)
 
 ## Dependencies
 
