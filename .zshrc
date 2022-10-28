@@ -12,8 +12,9 @@ plugins=(
   docker-compose
   fd
   git
-  pyenv
   virtualenv
+  poetry
+  pyenv
   zsh-ssh
   zsh-syntax-highlighting
   zsh-autosuggestions

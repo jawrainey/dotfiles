@@ -13,10 +13,14 @@ fi
 if [[ "$*" == *"python"* ]]; then
   # pyenv: python version manager
   git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-  cd $HOME/.pyenv && make -C src && cd $HOME
+  cd $HOME/.pyenv && src/configure && make -C src && cd $HOME
 
   # poetry: python package dependency manager
   curl -sSL https://install.python-poetry.org | python3 -
+
+  # for zsh completion (very good)
+  mkdir $ZSH_CUSTOM/plugins/poetry
+  poetry completions zsh > $ZSH_CUSTOM/plugins/poetry/_poetry
 fi
 
 if [[ "$*" == *"fzf"* ]]; then
