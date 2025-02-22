@@ -1,23 +1,20 @@
 # These commands are mosty helper methods when moving between machines.
 
-if [[ "$*" == *"vim"* ]]; then
-  vundle="$HOME/.vim/bundle/Vundle.vim"
-
-  if [ -d "$vundle" ]; then
-    cd $vundle; git pull; cd -;
-  else
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  fi;
-fi
-
 if [[ "$*" == *"python"* ]]; then
-  # pyenv: python version manager
-  git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-  cd $HOME/.pyenv && make -C src && cd $HOME
-
-  # poetry: python package dependency manager
-  curl -sSL https://install.python-poetry.org | python3 -
+  # uv: python package & dependency manager
+  curl -LsSf https://astral.sh/uv/install.sh | sh
 fi
+
+if [[ "$*" == *"vim"* ]]; then
+  # autoload used to install other plugins
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  # Install plugins after we have moved the .vimrc to the home directory.
+  # This means that the .vim folder is created dynamically with each install.
+  cp .vimrc $HOME/.vimrc
+  vim +PlugInstall +qall
+fi
+
 
 if [[ "$*" == *"fzf"* ]]; then
   fzf="$HOME/.fzf"
