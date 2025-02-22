@@ -1,22 +1,13 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
 " PLUGINS
-Plugin 'gmarik/vundle'
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim.git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-bufferline'
-Plugin 'bling/vim-airline'
-Plugin 'klen/python-mode'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Raimondi/delimitMate'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'elzr/vim-json'
-Plugin 'altercation/vim-colors-solarized.git'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-bufferline'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'elzr/vim-json'
+Plug 'vim-airline/vim-airline-themes'
 
-call vundle#end()
+call plug#end()
 
 " GENERAL SETTINGS
 syntax on                                       " Enable syntax highlighting
@@ -59,14 +50,6 @@ set spell                                       " Enable spell check by default 
 set spelllang=en_gb                             " Use British spelling
 set complete+=kspell                            " Use the currently active spell checking
 
-" GUI
-if has('gui_running')
-  set guioptions-=rL                            " Remove the scrollbar
-  set guifont=Inconsolata:h14                   " A beautiful monospace font
-  set guicursor=n:blinkon0                      " Stop the cursor blinking!
-  set linespace=5                               " Improve the line-height spacing
-endif
-
 " NETRW
 let g:netrw_banner=0                            " Remove help message
 let g:netrw_liststyle=3                         " Enable tree view
@@ -84,12 +67,6 @@ map gp :ls<cr>:b<space>
 map gd :ls<cr>:bd<space>
 
 " PLUGINS
-fu! CtrlP_main_status(...)
-  " Reduce the options on the default CtrlP status bar to match AirLine, i.e.
-  " » TYPE_OF_SEARCH «                                        VIM_PROJECT_DIR
-  retu '» ' . a:5. ' «' . '%=%<  ' . '%4*%*' . fnamemodify(getcwd(), ':~') . '%4*%*' . ' '
-endf
-
 function! AirLineInit()
   " Remove default symbols (>) in favour of » below
   let g:airline_left_sep=''
@@ -100,20 +77,13 @@ function! AirLineInit()
   let g:airline_section_b=''
   let g:airline_section_c=''
   " Show the name of the virtual environment if it exists.
-  let g:airline_section_x=g:pymode_virtualenv_path != '' ? split(g:pymode_virtualenv_path, '/')[-1] : ''
+  let g:airline_section_x=''
   let g:airline_section_y='%c'
   let g:airline_section_z=airline#section#create(['branch'])
-  " Required as AirLine overrides them on initialisation
-  let g:ctrlp_status_func={ 'main': 'CtrlP_main_status' }
 endfunction
 
 let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
-
-let delimitMate_expand_cr=1                             " Expand the brackets and add a new line on ENTER
-let g:ctrlp_show_hidden=1                               " Include hidden files in the search
-let g:ctrlp_working_path_mode=0                         " Search from current directory instead of project root
-let g:ctrlp_match_window='min:1,max:5'                  " The height that the window can size to based on results
 
 " AUTO COMMANDS
 autocmd Vimenter * call AirLineInit()                   " Load the defined AirLine settings above

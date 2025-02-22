@@ -5,6 +5,17 @@ if [[ "$*" == *"python"* ]]; then
   curl -LsSf https://astral.sh/uv/install.sh | sh
 fi
 
+if [[ "$*" == *"vim"* ]]; then
+  # autoload used to install other plugins
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  # Install plugins after we have moved the .vimrc to the home directory.
+  # This means that the .vim folder is created dynamically with each install.
+  cp .vimrc $HOME/.vimrc
+  vim +PlugInstall +qall
+fi
+
+
 if [[ "$*" == *"fzf"* ]]; then
   fzf="$HOME/.fzf"
 
